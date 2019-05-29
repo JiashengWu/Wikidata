@@ -16,9 +16,8 @@ class Wikidata:
         Parameters:
             relpath (string): The relative path of the Wikidata property files.
         """
-        paths = glob.glob(relpath)
         self.data = {}
-        for path in paths:
+        for path in glob.glob(relpath):
             self.data[path] = set(self.file_to_list(path))
 
     def find_property(self, strings):
