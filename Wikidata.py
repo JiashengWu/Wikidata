@@ -6,7 +6,6 @@ class Wikidata:
     """Wikidata class, which provide a function of find_property().
 
     Attributes:
-        paths (list): The file paths of the Wikidata property files.
         data (dict): Data stored as {path: example_set}.
     """
 
@@ -17,9 +16,9 @@ class Wikidata:
         Parameters:
             relpath (string): The relative path of the Wikidata property files.
         """
-        self.paths = glob.glob(relpath)
+        paths = glob.glob(relpath)
         self.data = {}
-        for path in self.paths:
+        for path in paths:
             self.data[path] = set(self.file_to_list(path))
 
     def find_property(self, strings):
