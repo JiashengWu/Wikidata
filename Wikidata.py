@@ -38,7 +38,7 @@ class Wikidata:
         scores = sorted(scores, key=lambda x: x[1], reverse=True)
         return scores
 
-    @ staticmethod
+    @staticmethod
     def file_to_list(relpath):
         """Convert a Wikidata property file to a list of strings.
 
